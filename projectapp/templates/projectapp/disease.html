@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html>
   <head>
@@ -26,7 +27,7 @@
     
 
     <link href="/static/projectapp/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="/static/projectapp/css/upload.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
     <link href="/static/projectapp/css/carousel.css" rel="stylesheet">
@@ -46,21 +47,52 @@
     <input type="radio" style="font-size:15px;">피부
     <input type="radio">눈
     <div class="d-grid gap-3" style="grid-template-columns: 1fr 1fr;">
-        <div class="bg-body-tertiary border rounded-3">
+        <!-- <div class="bg-body-tertiary border rounded-3">
           <br><br><br><br><h2 style="text-align: center;">이미지</h2><br><br><br><br><h2 style="text-align: center;">+</h2><br><br><br><br><h2 style="text-align: center;">업로드</h2><br><br><br><br>
         </div>
+        <!DOCTYPE html> -->
+
+        <h2>파일 업로드</h2>
+        <p class="lead">No Plugins <b>Just Javascript</b></p>
+        
+        <!-- Upload  -->
+        <form id="file-upload-form" class="uploader">
+          <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+        
+          <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="Preview" class="hidden">
+            <div id="start">
+              <i class="fa fa-download" aria-hidden="true"></i>
+              <div>Select a file or drag here</div>
+              <div id="notimage" class="hidden">Please select an image</div>
+              <span id="file-upload-btn" class="btn btn-primary">파일 선택하기</span>
+            </div>
+            <div id="response" class="hidden">
+              <div id="messages"></div>
+              <progress class="progress" id="file-progress" value="0">
+                <span>0</span>%
+              </progress>
+            </div>
+          </label>
+        </form>
+      <script src="/static/projectapp/js/upload.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+      </body>
+      </html>
         <div class="bg-body-tertiary">
             <h1 style="text-align: center;">주의사항</h1>
-            <h3>1. ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</h3>
             <br/>
-            <h3>2. ㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴ</h3>
+            <h3>1. 사진 용량 5MB 미만</h3>
             <br/>
-            <h3>3. ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</h3>
+            <h3>2. 사진 사이즈 600 * 600px</h3>
             <br/>
-            <h3>4. ㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂ</h3>
+            <h3>3. 최대한 선명하게 나온 고해상도 사진 이용 </h3>
             <br/>
+            <h3>4. 흑백 사진보다는 컬러 사진 이용</h3>
+            <br/>
+            <h3>5. 캡쳐한 이미지 파일은 .jpg 파일 형식으로 저장</h3>
         </div>
-        
+        <!DOCTYPE html>        
         <div class="filebox preview-image">     
             <label for="input-file" style="float:right">파일선택</label>
             <input type="file" id="input-file" class="upload-hidden">
